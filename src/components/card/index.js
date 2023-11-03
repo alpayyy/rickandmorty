@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Card,
@@ -11,6 +11,12 @@ import {
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const CharacterCard = ({ character }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <Card sx={{ width: '150px' }}>
       <CardMedia
@@ -28,8 +34,11 @@ const CharacterCard = ({ character }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon color="error" />
+        <IconButton
+          aria-label="add to favorites"
+          onClick={toggleFavorite}
+        >
+          <FavoriteIcon color={isFavorite ? 'error' : 'inherit'} />
         </IconButton>
         <Button size="small" variant="text">
           Details
