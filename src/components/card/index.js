@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import {
+  CardMedia,
+  IconButton,
+  Typography,
   Button,
   Card,
   CardActions,
   CardContent,
-  CardMedia,
-  IconButton,
-  Typography,
-} from '@mui/material';
+
+}
+ from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const CharacterCard = ({ character }) => {
